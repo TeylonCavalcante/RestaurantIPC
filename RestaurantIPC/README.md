@@ -3,12 +3,12 @@
 ## Objetivo
 Projeto simples que demonstra mecanismos de concorrência e IPC:
 - Filas de mensagens POSIX (mq_send/mq_receive)
-- Processos (fork/exec não usado aqui; cliente e server são binários separados)
+- Processos (cliente e server são binários separados)
 - Threads (logger thread no server)
 - Mutex/cond (para fila interna do logger)
 - Semáforo POSIX nomeado (limita clientes simultâneos)
 - Memória compartilhada POSIX (shm_open + mmap) para contador total de pedidos
-- Sinais (SIGINT para shutdown gracioso)
+- Sinais (SIGINT para shutdown)
 
 ## Arquivos
 - `src/server.c` — servidor (cozinha)
@@ -25,3 +25,4 @@ Projeto simples que demonstra mecanismos de concorrência e IPC:
 ## Compilar
 ```bash
 make
+
